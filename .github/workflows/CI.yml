@@ -29,14 +29,14 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build -t mood-board-backend:latest .
+          docker build -t marka-backend:latest .
 
       - name: Run trivy
         uses: aquasecurity/trivy-action@master
         with:
           scan-type: "image"
-          image-ref: "mood-board-backend:latest"
-          severity: HIGH,CRITICAL
+          image-ref: "marka-backend:latest"
+          severity: HIGH,CRITICAL,MEDIUM
           ignore-unfixed: true
           exit-code: 1
 
